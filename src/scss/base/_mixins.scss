@@ -1,0 +1,33 @@
+@mixin respond-to($breakpoints, $breakpointmap: $breakpointss) {
+  @if map-has-key($breakpointmap, $breakpoints) {
+    @media (min-width: #{map-get($breakpointmap, $breakpoints)}) {
+      @content;
+    }
+  } @else {
+    @if (str-index($breakpoints, 'max-')) {
+      $ln-bp: ln-str-replace($breakpoints, 'max-', '');
+
+      @if map-has-key($breakpointmap, $ln-bp) {
+        /* stylelint-disable-next-line max-nesting-depth */
+        @media (max-width: #{(map-get($breakpointmap, $ln-bp)-1)}) {
+          @content;
+        }
+      }
+    } @else if (str-index($breakpoints, 'min-')) {
+      $ln-bp: ln-str-replace($breakpoints, 'min-', '');
+
+      @if map-has-key($breakpointmap, $ln-bp) {
+        /* stylelint-disable-next-line max-nesting-depth */
+        @media (min-width: #{map-get($breakpointmap, $ln-bp)}) {
+          @content;
+        }
+      }
+    } @else {
+      @warn '`#{$breakpoints}` doesn\'t exist in the breakpoints map.';
+    }
+  }
+}
+
+@mixin set-background-color ($type){
+  background-color: map-get($page-background, $type )
+}
