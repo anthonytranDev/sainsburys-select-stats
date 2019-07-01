@@ -12,11 +12,11 @@ Please check out [Luna v1]()
 
 ### Contents
 
+There are multiple ways to jump start your project with Luna v2, some more for demo purposes where as others can be use for a fully fledged application; see below;
+
 1. Starter kits & demo projects
 2. Migration Guides
 3. Build your first Luna app
-
-[Insert tutorial material here]
 
 ## Starter kits & demos
 
@@ -53,7 +53,7 @@ Learning Aims:
 I am able to...
 
 - **Setup a Luna project** - how to get a starting project base up and running. With both Luna packages and create-react-app
-- **Apply Luna best practices** - tips on ways to utilise some of the features Luna has to offer in your React app. Such as the `@jsluna/style` and `@jsluna/react`
+- **Apply Luna best practices** - tips on ways to utilise some of the features Luna has to offer in your React app. Such as the `@jsluna/style` utilise mixins and functions and `@jsluna/react` components
 
 ### End result
 
@@ -79,6 +79,64 @@ Tools we’ll be using
 ### 1) Setup
 
 [Insert tutorial material here]
+
+#### 1a) Ask for access to packages
+Please email the following package admins, for access to these packages
+- edward.mortlock@sainsburys.co.uk
+- mike.beach1@sainsburys.co.uk
+
+Feel free to copy the email template below:
+
+```
+`Possible <email> template`
+```
+
+#### 1b) Use starter pack `create-react-app` (CRA)
+
+Globally install the starter pack generator. Recommend you do this as it's easy to forget that you've installed it in one location; having to reinstall in a different location; keep starter packs setup scripts globally.
+
+```
+$ npm i -g create-react-app
+```
+
+Utilise the `npx` tool below; it's part of the command to kit start your project
+
+```
+$ npx create-react-app my-luna-project
+```
+
+The resulting directory structure below
+
+```
+.
+├── README.md
+├── package.json
+├── node_modules
+├── public
+│   ├── favicon.ico
+│   ├── index.html
+│   └── manifest.json
+├── src
+│   ├── App.css
+│   ├── App.js
+│   ├── App.test.js
+│   ├── index.css
+│   ├── index.js
+│   ├── logo.svg
+│   └── serviceWorker.js
+└── yarn.lock
+```
+
+#### 1c) Integrate Luna v2 into CRA
+Include a `.npmrc` in the root of this project, this allow you access to the private repos that managed by Nexus 3.
+Please include following value to your project. 
+
+
+**`.npmrc`**
+```
+@jsluna:registry=https://nexus.public.dev.golf-noprod.js-devops.co.uk/repository/npm/
+email=my@sainsburys.co.uk?[YOUR_SECURITY_HASH]
+```
 
 ### 2) First Luna Component
 
