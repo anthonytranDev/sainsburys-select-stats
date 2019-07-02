@@ -1,6 +1,6 @@
 # Quickstart: Luna v2 and React
 
-[Document still incomplete]
+[Document still incomplete] - Separate or integrate into docs/introductions.md
 
 Guidelines on how to get you up and running with Luna and React
 
@@ -17,6 +17,7 @@ There are multiple ways to jump start your project with Luna v2, some more for d
 1. Starter kits & demo projects
 2. Migration Guides
 3. Build your first Luna app
+4. Support
 
 ## Starter kits & demos
 
@@ -88,7 +89,7 @@ Please email the following package admins, for access to these packages
 Feel free to copy the email template below:
 
 ```
-`Possible <email> template`
+Possible <email> template
 ```
 
 #### 1b) Use starter pack `create-react-app` (CRA)
@@ -128,20 +129,56 @@ The resulting directory structure below
 ```
 
 #### 1c) Integrate Luna v2 into CRA
-Include a `.npmrc` in the root of this project, this allow you access to the private repos that managed by Nexus 3.
-Please include following value to your project. 
 
+[Next branch luna-react-app]
+
+Generate a base64 hash with the following command with your `username` and `password` - that includes the semi-colon (`:`) below inbetween the `username` and `password`;
+
+```
+$ echo -n "<username>:<password>" | openssl base64
+```
+```
+> PHVzZXJuYW1lPjo8cGFzc3dvcmQ+
+```
+
+Include a `.npmrc` in the root of this project, this allows you access to the private repos that managed by Nexus 3.
+Please include the following hash to the string below to your project. 
 
 **`.npmrc`**
 ```
-@jsluna:registry=https://nexus.public.dev.golf-noprod.js-devops.co.uk/repository/npm/
+@jsluna:registry=https://nexus.public.prd.golf-prod.js-devops.co.uk/repository/npm/
 email=my@sainsburys.co.uk?[YOUR_SECURITY_HASH]
+```
+
+Install the following Luna packages, as this will enable you access to the full suite of Luna components.
+
+You might think that's a lot of packages, and you're right, however this decomposition of the original code base, is useful in keeping your bundle sizes small we'll get onto that afterwards.
+
+
+```
+$ npm i -S @jsluna/react @jsluna/style @jsluna/labs @jsluna/link @jsluna/images @jsluna/fonts @jsluna/icons
+```
+
+To integrate the component styles into your applications, requires in the installation of `node-sass`. `create-react-app` supports SASS out of the box `react-scripts v2.0.0` (since Oct 1st 2018).
+```
+$ npm i -S node-sass
+```
+
+Include a sass-
+
+Remove all the `.css` files in your project and add a `main.scss` files to the root of your project with the following;
+
+**`main.scss`**
+```
+$ln-webpack: true;
+
+@import '@jsluna/style/scss/main.scss';
 ```
 
 ### 2) First Luna Component
 
-Going to throw you in the deep end, as we'll be utilising the `Header` component. As the first component in our webpage.
+[Next branch luna-react-boilerplate]
 
-Here the benefits of using Luna, over other UI libraries and trying to create your own UI library from scratch, becomes apparently clear.
+Insert Containers ...etc
 
-[Insert tutorial material here]
+[Insert tutorial material here] - 

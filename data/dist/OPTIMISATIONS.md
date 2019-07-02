@@ -18,7 +18,7 @@ This was data gather from the `sainsburys-select-cra` app
 
 ## Statistics
 
-**Total ∙ 739.43 KB (Compressed) ∙ 100%**
+
 
 - @jsluna ∙ 230.67KB (Compressed) ∙ 31.2%
   - @jsluna/react ∙ 119.36KB (Compressed) ∙ 16.1%
@@ -31,6 +31,16 @@ This was data gather from the `sainsburys-select-cra` app
 - moment ∙ 53.48KB (Compressed) ∙ 7.2%
 - popper.js ∙ 20.77KB (Compressed) ∙ 2.8%
 - downshift ∙ 15.9KB (Compressed) ∙ 2.2%
+
+
+- @jsluna ∙ 117.53KB (Compressed) ∙ 40.7%
+  - @jsluna//icons ∙ 40.11KB (Compressed) ∙ 13.9%
+  - @jsluna//form ∙ 26.75KB (Compressed) ∙ 9.2%
+  - @jsluna//labs ∙ 17.55KB (Compressed) ∙ 6.1%
+  - @jsluna//button ∙ 6.23KB (Compressed) ∙ 2.2%
+- react-dom ∙ 106.13KB (Compressed) ∙ 36.7%
+- popper.js ∙ 20.77KB (Compressed) ∙ 7.2%
+
 
 # [DURING] Luna V2 bundle optimisations
 
@@ -96,4 +106,5 @@ import { Display1 } from "@jsluna/typography";
 - First time loads (remove cache)
 - Subsequent loads loads (remove cache)
 
-* [Luna v2 (Post Destructure)](https://kind-boyd-81397e.netlify.com/)
+* [Luna v2 (Post Destructure)](https://compassionate-archimedes-256fe2.netlify.com)
+  Funny fact - when a package was accidentally installed with the application, which was `@jsluna/forms` this package wasn't utilise as it wasn't part of the build. Where as if `@jslna/react` was used, the script would have been loaded as it was part of the `[hash].chunk.js` bundle
